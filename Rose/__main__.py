@@ -105,7 +105,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             url=f"https://t.me/StrawHatNetwork"),
             InlineKeyboardButton(text="🚑 Support", 
             url=f"https://t.me/StrawHatTeam")
-        ]
+        ],
         [
             InlineKeyboardButton(text="[► Help ◄]", 
             callback_data="bot_commands")
