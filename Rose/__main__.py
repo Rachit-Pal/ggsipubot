@@ -95,28 +95,28 @@ home_keyboard_pm = InlineKeyboardMarkup(
             url=f"http://t.me/{BOT_USERNAME}?startgroup=new")
         ],
         [
-            InlineKeyboardButton(text="ℹ️ About", 
+            InlineKeyboardButton(text="📃 About", 
             callback_data="_about"),
-            InlineKeyboardButton(text="🌍 languages ", 
-            callback_data="_langs")
+            InlineKeyboardButton(text="🌐 Website", 
+            url=f"http://www.ipu.ac.in/")
         ],
         [
-            InlineKeyboardButton(text="⚒ Help", 
+            InlineKeyboardButton(text="🔔 Updates", 
+            url=f"https://t.me/StrawHatNetwork"),
+            InlineKeyboardButton(text="🚑 Support", 
+            url=f"https://t.me/StrawHatTeam")
+        ]
+        [
+            InlineKeyboardButton(text="[► Help ◄]", 
             callback_data="bot_commands")
         ],
-        [
-            InlineKeyboardButton(text="Website", 
-            url=f"https://szrosebot.ml"),
-            InlineKeyboardButton(text="News Channel", 
-            url=f"https://t.me/szroseupdates")
-        ]
     ]
 )
 
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="📚 Commands & help", 
+            InlineKeyboardButton(text="⚙️ Commands & Help", 
             url=f"t.me/{BOT_USERNAME}?start=help")
         ]
     ]
@@ -162,12 +162,12 @@ My name is {BOT_NAME} an  advanced telegram Group management Bot For helpYou Pro
 
 
 fbuttons = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="👥Support Group", url="https://t.me/szrosesupport"),
-          InlineKeyboardButton(text="👤News Channel", url="https://t.me/Theszrosebot")], 
-        [ InlineKeyboardButton(text="⚒ Source Code", url="https://github.com/szsupunma/sz-rosebot"),
-          InlineKeyboardButton(text="📓 Documentation", url="https://szsupunma.gitbook.io/rose-bot")], 
-        [InlineKeyboardButton(text="🖥 How To Deploy Me", url="https://szsupunma.gitbook.io/rose-bot")
-        ],[InlineKeyboardButton("« Back", callback_data='startcq')]])
+        [[InlineKeyboardButton(text="🔔 Updates", url="https://t.me/StrawHatNetwork"),
+          InlineKeyboardButton(text="🚑 Support", url="https://t.me/StrawHatTeam")], 
+        [ InlineKeyboardButton(text="💾 Source Code", url="https://github.com/Rachit-Pal/GGSIPUBOT"),
+          InlineKeyboardButton(text="🌐 Website", url="http://www.ipu.ac.in/")], 
+        [InlineKeyboardButton(text="👑 Owner", url="https://t.me/SAlTAM4")
+        ],[InlineKeyboardButton("🔙 Back", callback_data='startcq')]])
 
 keyboard =InlineKeyboardMarkup(
     [[InlineKeyboardButton(text="🇱🇷 English", callback_data="languages_en")],
@@ -241,9 +241,9 @@ async def help_command(client, message: Message, _):
 async def startcq(client,CallbackQuery, _):
     await CallbackQuery.message.edit(
         text=f"""
+────「 [IPU Assistant](https://telegra.ph/file/cfe86b1cbc66ab7476a66.jpg) 」────
 Hey there {CallbackQuery.from_user.mention}, 
-
-My name is Rose an  advanced telegram Group management Bot For helpYou Protect Your Groups & Suit For All Your Needs.feel free to add me to your groups! """,
+I am IPU Assistant, an advanced telegram group management bot to help you protect your groups and suit all your needs. Feel free to add me to your groups! """,
         disable_web_page_preview=True,
         reply_markup=home_keyboard_pm)
 
@@ -253,13 +253,18 @@ async def help_parser(name, keyboard=None):
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
 """
-**Welcome to help menu**
+**Welcome to Help Menu**
 
 I'm a group management bot with some useful features.
 You can choose an option below, by clicking a button.
-If you have any bugs or questions on how to use me, 
-have a look at my [Docs](https://szsupunma.gitbook.io/rose-bot/), or head to @szteambots.
 
+🎛 *Main commands available:*
+ • /start: Starts me, can be used to check I'm alive or not.
+ • /help <module name>: PM's you this message.
+ • /settings:
+   - in PM: will send you your settings for all supported modules.
+   - in a group: will redirect you to pm, with all that chat's settings.
+   
 **All commands can be used with the following: / **""",keyboard)
 
 
