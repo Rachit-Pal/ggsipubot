@@ -18,7 +18,7 @@
 
 Have you ever received Telegram in your group **spam, adder, flood,** people who send link, channel message, promoting, arabic ? Rose Bot is the automatic moderator that manages your Telegram group and punishes malicious users automatically for you.
 
-## How does She work?
+## How does She work?!
 
 Just add Rose Bot to your group as an administrator and configure it with the command /help. It will be ready to protect the your group from spam, flood and attacks. You can set banned words so that the ban or mute of a user in the group when sent.
 There is an anti-porn filter to be enabled to automatically delete and punish those who send pornographic content in your group.
